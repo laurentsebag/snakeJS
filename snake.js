@@ -55,6 +55,10 @@ class SnakeModel {
         return this;
     }
 
+    getBody() {
+        return this.body;
+    }
+
     toString() {
         return this.body.map(function (item) {
             return `(${item.x}, ${item.y})`;
