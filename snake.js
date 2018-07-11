@@ -25,7 +25,12 @@ class SnakeModel {
     }
 
     moveUp() {
+        const lastHead = this.body[this.body.length - 1];
 
+        this._moveTail();
+        this.body.push(new Point(lastHead.x, lastHead.y - 1));
+
+        return this;
     }
 
     moveDown() {
@@ -47,7 +52,12 @@ class SnakeModel {
     }
 
     moveLeft() {
+        const lastHead = this.body[this.body.length - 1];
 
+        this._moveTail();
+        this.body.push(new Point(lastHead.x - 1, lastHead.y));
+
+        return this;
     }
 
     grow() {
