@@ -2,8 +2,7 @@ var canvas = document.getElementById("gameBoard");
 var context = canvas.getContext("2d");
 
 var cellSize = 38;
-var movementX = 0;
-var speed = 500;
+var speed = 200;
 var direction = 'ArrowRight';
 
 var snake = new SnakeModel();
@@ -23,7 +22,7 @@ function draw() {
 
     context.fillStyle = 'green';
 
-    const body = snake.getBody();
+    var body = snake.getBody();
 
     for (var i = 0; i < body.length; i++) {
         const bodyPart = body[i];
@@ -43,5 +42,3 @@ function draw() {
 }
 
 setInterval(draw, speed);
-
-
